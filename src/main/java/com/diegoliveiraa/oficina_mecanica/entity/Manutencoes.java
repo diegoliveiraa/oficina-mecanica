@@ -21,9 +21,11 @@ public class Manutencoes {
     @ManyToOne
     @JoinColumn(name = "vaiculoId")
     private Veiculos veiculo;
-    private LocalDateTime data;
-    private String descricao;
     @ManyToMany
     @JoinColumn(name = "pecasId")
     private Pecas peca;
+    private String descricao;
+    private LocalDateTime data;
+
+
 }
