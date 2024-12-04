@@ -1,5 +1,6 @@
 package com.diegoliveiraa.oficina_mecanica.entity;
 
+import com.diegoliveiraa.oficina_mecanica.dtos.PecaDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,7 +26,14 @@ public class Pecas {
     private String categoria;
     private String fornecedor;
     private BigDecimal precoUnitario;
-    private BigDecimal estoqueInicial;
+    private BigDecimal quantidade;
     private LocalDateTime data;
 
+    public Pecas(PecaDTO data) {
+        this.nome = data.nome();
+        this.categoria = data.categoria();
+        this.fornecedor = data.fornecedor();
+        this.precoUnitario = data.precoUnitario();
+        this.quantidade = data.quantidade();
+    }
 }
