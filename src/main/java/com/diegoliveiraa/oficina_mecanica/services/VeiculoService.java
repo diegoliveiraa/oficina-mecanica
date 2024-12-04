@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class VeiculoService {
@@ -39,5 +41,8 @@ public class VeiculoService {
         repositorio.save(veiculoAtualizado);
 
         return (veiculoAtualizado);
+    }
+    public Veiculos buscarVeiculoPorId(UUID id) throws Exception {
+        return this.repositorio.buscarVeiculoPorId(id).orElseThrow(() -> new Exception("Veiculo não encontrada"));
     }
 }
