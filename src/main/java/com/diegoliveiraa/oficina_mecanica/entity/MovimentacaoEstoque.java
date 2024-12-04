@@ -18,13 +18,13 @@ public class MovimentacaoEstoque {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "pecaId")
     private Pecas peca;
     private MovimentacaoTipo entrada;
     private MovimentacaoTipo saida;
-    private BigDecimal quantidade;
+    //private BigDecimal quantidade;
     private LocalDateTime dataMovimentacao;
-    private BigDecimal precoUnitario;
+    //private BigDecimal valorTotal;
 
 }
