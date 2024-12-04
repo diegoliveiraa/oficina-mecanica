@@ -1,5 +1,6 @@
 package com.diegoliveiraa.oficina_mecanica.entity;
 
+import com.diegoliveiraa.oficina_mecanica.dtos.ManutencaoDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,5 +28,9 @@ public class Manutencoes {
     private String descricao;
     private LocalDateTime data;
 
-
+    public Manutencoes(ManutencaoDTO data){
+        this.veiculo = data.veiculoId();
+        this.peca = data.pecaId();
+        this.descricao = data.descricao();
+    }
 }
